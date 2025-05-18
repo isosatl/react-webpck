@@ -1,7 +1,12 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default {
   entry: './src/index.js',
   devtool: 'eval-source-map',
   output: {
@@ -18,14 +23,14 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
-     {
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-    },
-    {
+      },
+      {
         test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)$/i,
         type: 'asset/resource',
-    },
+      },
     ],
   },
   resolve: {

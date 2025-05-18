@@ -4,17 +4,27 @@ This project demonstrates how to set up a React application from scratch using W
 
 ## Prerequisites
 
-- Node.js and npm installed
+- Node.js v18.18.0 or newer (see [.nvmrc](./.nvmrc))
+- npm installed
 
 ## Getting Started
 
-### 1. Install dependencies
+### 1. Set Node Version
+
+If you use nvm, run:
+
+```
+nvm install
+nvm use
+```
+
+### 2. Install dependencies
 
 ```
 npm install
 ```
 
-### 2. Run the development server
+### 3. Run the development server
 
 ```
 npm start
@@ -22,7 +32,7 @@ npm start
 
 This will start the app at [http://localhost:3000](http://localhost:3000).
 
-### 3. Build for production
+### 4. Build for production
 
 ```
 npm run build
@@ -41,8 +51,10 @@ react-webpck/
 │   ├── App.js
 │   └── index.js
 ├── .babelrc
+├── .nvmrc
 ├── package.json
 ├── webpack.config.js
+├── eslint.config.js
 └── README.md
 ```
 
@@ -51,7 +63,15 @@ react-webpck/
 - `npm start` — Runs the development server with hot reloading.
 - `npm run build` — Builds the app for production.
 
+## Configuration Files
+
+- [webpack.config.js](./webpack.config.js)
+- [.babelrc](./.babelrc)
+- [eslint.config.js](./eslint.config.js)
+- [.nvmrc](./.nvmrc)
+
 ## Notes
 
 - Edit `src/App.js` to change your main React component.
 - Webpack and Babel are configured in `webpack.config.js` and `.babelrc` respectively.
+- ESLint is set up with the new flat config in `eslint.config.js` (requires Node.js v18.18.0+).
